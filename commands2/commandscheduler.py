@@ -449,6 +449,12 @@ class CommandScheduler(Sendable):
     def enable(self) -> None:
         """Enables the command scheduler."""
         self._disabled = False
+        
+    def printWatchdogEpochs(self) -> None:
+        """
+        Prints the watchdog epochs to the console.
+        """
+        self._watchdog.printEpochs()
 
     def onCommandInitialize(self, action: Callable[[Command], Any]) -> None:
         """
